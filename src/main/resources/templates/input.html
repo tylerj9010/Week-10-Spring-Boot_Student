@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Student Spring Application- Input</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script type="text/javascript" src="/js/src/script.js"></script>
+</head>
+<body>
+<fieldset>
+	<form th:object="${newStudent}" th:action="@{/update/{id}(id=${newStudent.id})}" method=POST onsubmit=" return runValidation()">
+	Name: <input name="name" size="20" th:field="*{name}" id="inName"><br />
+	Age: <input name="age" size="20" th:field="*{age}" id="inAge"><br />
+	Starting Year: <input name="StartingYear" size="20" th:field="*{startingYear}" id="inYear"><br />
+	
+	<input name="Submit" type="submit" value="submit" />
+	</form>
+</fieldset>
+	
+	<a href="../viewAll">View All Students</a>
+
+</body>
+</html>

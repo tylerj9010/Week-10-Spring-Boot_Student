@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Spring Application- Results</title>
+<link rel="stylesheet" href="/css/style.css">
+<script type="text/javascript" src="/js/src/script.js"></script>
+</head>
+<body>
+<fieldset>
+	<form>
+		<table>
+		<tr th:each="currentStudent: ${students}">
+			<td th:text="${currentStudent.id}" />
+			<td th:text="${currentStudent.name}" />
+			<td th:text="${currentStudent.age}" />
+			<td th:text="${currentStudent.startingYear}" />
+			<td><a th:href="@{/edit/{id}(id=${currentStudent.id})}">Edit</a></td>
+			<td><a th:href="@{/delete/{id}(id=${currentStudent.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+</fieldset>
+<a href="../inputStudent">Add a new student</a>
+
+</body>
+</html>
